@@ -414,6 +414,12 @@ h1, h2, h3 {
   border-radius: var(--radius);
 }
 
+/* For nearly square images — show full image without cropping */
+.editorial-img--contain {
+  object-fit: contain;
+  background: var(--ivory);
+}
+
 /* Legacy intro styles kept for safety */
 .intro-block {
   padding: 7rem 2rem;
