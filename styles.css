@@ -389,7 +389,7 @@ h1, h2, h3 {
 .editorial-img-placeholder {
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: var(--ivory-tint);
+  background: var(--ivory);
   border: 1px dashed rgba(201, 169, 110, 0.35);
   display: flex;
   align-items: center;
@@ -553,7 +553,7 @@ h1, h2, h3 {
 .collection-img-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: var(--ivory-tint);
+  background: var(--ivory);
   position: relative;
   overflow: hidden;
   transition: transform 0.5s ease;
@@ -667,7 +667,7 @@ h1, h2, h3 {
 
 .partners-section {
   padding: 7rem 2rem;
-  background: var(--ivory-tint);
+  background: var(--ivory);
 }
 
 .partners-section .section-label,
@@ -781,7 +781,7 @@ h1, h2, h3 {
 
 .contact-section {
   padding: 7rem 2rem;
-  background: var(--ivory-tint);
+  background: var(--ivory);
 }
 
 .contact-inner {
