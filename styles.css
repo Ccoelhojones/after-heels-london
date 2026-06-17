@@ -791,7 +791,26 @@ h1, h2, h3 {
 
 .contact-intro {
   max-width: 560px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+.contact-email {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--burgundy);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+  padding-bottom: 0.25rem;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.contact-email:hover {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .contact-form {
