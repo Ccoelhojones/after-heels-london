@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=794" />
+  <title>After Heels London — Brochure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --burgundy: #6B1A2A;
+      --burgundy-deep: #5C1220;
+      --gold: #C9A96E;
+      --gold-rule: #D4A84B;
+      --ivory: #F8F4EF;
+      --ivory-dark: #F0EBE3;
+      --text-body: #2C2420;
+      --text-mid: #5C4A42;
+      --text-light: #8C7B74;
+      --white: #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #E8E4DE;
+      font-family: var(--font-serif);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      @page { size: 210mm 297mm; margin: 0; }
+      html, body {
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+        background: var(--ivory);
+      }
+      .page {
+        page-break-before: always;
+        break-before: page;
+        page-break-after: always;
+        break-after: page;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        min-height: unset !important;
+        overflow: hidden !important;
+      }
+      .page:first-child { page-break-before: avoid; break-before: avoid; }
+      .page:last-child  { page-break-after:  avoid; break-after:  avoid; }
+    }
+
+    .page {
+      width: 794px;
+      height: 1123px;
+      margin: 2rem auto;
+      background: var(--ivory);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    }
+
+    /* ── SHARED ── */
+    .banner {
+      width: 100%;
+      height: 42px;
+      background: linear-gradient(135deg, #5C1220 0%, #7A1A2E 50%, #5C1220 100%);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .banner-address {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .banner-address .addr { color: var(--gold); }
+    .banner-address .site { color: rgba(255,255,255,0.9); }
+
+    .gold-rule {
+      display: block;
+      width: 44px;
+      height: 1px;
+      background: var(--gold-rule);
+    }
+
+    .footer-strip {
+      height: 18px;
+      min-height: 18px;
+      background: linear-gradient(90deg, #5C1220, #7A1A2E, #5C1220);
+      flex-shrink: 0;
+    }
+
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--burgundy-deep);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-body {
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .section-body + .section-body { margin-top: 0.65rem; }
+
+    /* ══════════════════════════════════
+       PAGE 1 — COVER
+    ══════════════════════════════════ */
+
+    /* Top half: brand name left / logo right */
+    .p1-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 430px;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(212,168,75,0.2);
+      overflow: hidden;
+    }
+
+    .p1-top-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 2rem 2.5rem 2.5rem;
+      gap: 0.9rem;
+    }
+
+    .p1-brand {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--burgundy-deep);
+      letter-spacing: 0.06em;
+      line-height: 1.15;
+    }
+
+    .p1-brand span { color: var(--gold-rule); font-size: 2.3rem; }
+
+    .p1-tagline {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-body);
+    }
+
+    .p1-tagline-main {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--burgundy-deep);
+    }
+
+    .p1-tagline-sub {
+      font-size: 1.05rem;
+      display: block;
+      color: var(--gold);
+      margin-top: 0.5rem;
+    }
+
+    .p1-intro {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.8;
+      max-width: 240px;
+    }
+
+    .p1-top-right {
+      background: var(--ivory-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .p1-top-right img {
+      width: 100%;
+      max-height: 240px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    /* Bottom half: large product image */
+    .p1-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 646px;
+      flex-shrink: 0;
+      border-top: 1px solid rgba(212,168,75,0.2);
+      overflow: hidden;
+    }
+
+    .p1-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--ivory-dark);
+    }
+
+    .p1-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    .p1-collection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 2.5rem 2rem 2rem;
+      gap: 0.5rem;
+    }
+
+    .p1-collection-grid {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.75rem;
+      gap: 0;
+    }
+
+    .p1-col-divider {
+      height: 1px;
+      background: rgba(212,168,75,0.3);
+      margin: 0.85rem 0;
+    }
+
+    .p1-collection .section-label { font-size: 0.65rem; }
+    .p1-collection .section-heading { font-size: 1.8rem; }
+    .p1-collection .style-name { font-size: 1.3rem; }
+    .p1-collection .style-finish { font-size: 0.95rem; }
+    .p1-collection .style-colours span { font-size: 0.62rem; padding: 0.3rem 0.7rem; }
+
+    .p1-image-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 2.5rem;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--burgundy-deep);
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════
+       PAGE 2 — DETAIL
+    ══════════════════════════════════ */
+
+    /* Concept section: text left / packaging image right */
+    .p2-concept {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 473px;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(212,168,75,0.2);
+      overflow: hidden;
+    }
+
+    .p2-concept-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.5rem 1.5rem 1.5rem 2rem;
+      gap: 0.5rem;
+      overflow: hidden;
+    }
+
+    .p2-concept-left .section-label { font-size: 0.62rem; }
+    .p2-concept-left .section-heading { font-size: 1.45rem; }
+    .p2-concept-left .section-body { font-size: 0.95rem; }
+
+    .p2-concept-right {
+      background: var(--ivory-dark);
+    }
+
+    .p2-concept-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    /* Collection section: spans full width, two style columns */
+    .p2-collection {
+      background: var(--ivory-dark);
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid rgba(212,168,75,0.2);
+      flex-shrink: 0;
+    }
+
+    .p2-collection-grid {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.75rem;
+      gap: 0;
+    }
+
+    .p2-col-divider {
+      height: 1px;
+      background: rgba(212,168,75,0.3);
+      margin: 0.75rem 0;
+    }
+
+    .style-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--burgundy-deep);
+      margin-bottom: 0.1rem;
+    }
+
+    .style-finish {
+      font-family: var(--font-serif);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .style-colours {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .style-colours span {
+      font-family: var(--font-sans);
+      font-size: 0.48rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border: 1px solid rgba(107,26,42,0.2);
+      color: var(--text-mid);
+    }
+
+    /* Experience section: image left / quote right */
+    .p2-experience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 323px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .p2-exp-left {
+      background: var(--ivory-dark);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .p2-exp-left img {
+      width: 70%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    .p2-exp-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem 2rem 1.25rem 1.5rem;
+      gap: 0.5rem;
+      overflow: hidden;
+    }
+
+    .p2-exp-right .section-label { font-size: 0.62rem; }
+    .p2-exp-right .section-heading { font-size: 1.45rem; }
+    .p2-exp-right .section-body { font-size: 0.95rem; }
+
+    .pullquote {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--burgundy-deep);
+      line-height: 1.7;
+      border-left: 2px solid var(--gold-rule);
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Contact footer */
+    .p2-footer {
+      height: 267px;
+      padding: 1.5rem 2.5rem 1.25rem;
+      text-align: center;
+      border-top: 1px solid rgba(212,168,75,0.3);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .footer-label {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-details {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    .footer-emails {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-website {
+      display: block;
+    }
+
+    .footer-details a {
+      color: var(--burgundy-deep);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       PAGE 1 — COVER
+  ══════════════════════════════════ -->
+  <div class="page">
+
+    <header class="banner">
+      <span class="banner-address"><span class="addr">London, W1J 8AJ</span> <span class="addr">&nbsp;·&nbsp;</span> <span class="site">afterheelslondon.com</span></span>
+    </header>
+
+    <!-- Brand name left / logo right -->
+    <div class="p1-top">
+      <div class="p1-top-left">
+        <h1 class="p1-brand">After Heels<br /><span>London</span></h1>
+        <span class="gold-rule"></span>
+        <p class="p1-tagline">
+          <span class="p1-tagline-main">Elegant Comfort Footwear</span>
+        </p>
+        <p class="p1-intro">Premium comfort footwear, beautifully presented — for guests who deserve to keep celebrating long after the heels come off.</p>
+        <p class="p1-tagline-sub">Weddings &nbsp;·&nbsp; Events &nbsp;·&nbsp; Luxury Hospitality</p>
+      </div>
+      <div class="p1-top-right">
+        <img src="main-logo.png" alt="After Heels London" />
+      </div>
+    </div>
+
+    <!-- Product image left / Collection text right -->
+    <div class="p1-bottom">
+      <div class="p1-image">
+        <img src="product shot 2.jpeg" alt="After Heels London sandals" />
+        <p class="p1-image-caption">Elegant Comfort<br />When the Heels Come Off</p>
+      </div>
+      <div class="p1-collection">
+        <p class="section-label">Our First Range</p>
+        <h2 class="section-heading">The Collection</h2>
+        <span class="gold-rule"></span>
+        <div class="p1-collection-grid">
+          <div>
+            <p class="style-name">The Soft Collection</p>
+            <p class="style-finish">Soft leather &nbsp;·&nbsp; Tubular straps</p>
+            <div class="style-colours">
+              <span>Black</span><span>White</span><span>Red</span><span>Nude</span>
+            </div>
+          </div>
+          <div class="p1-col-divider"></div>
+          <div>
+            <p class="style-name">The Classic Collection</p>
+            <p class="style-finish">Matt leather &nbsp;·&nbsp; Flat straps</p>
+            <div class="style-colours">
+              <span>Black</span><span>Chocolate</span><span>Red</span><span>Silver</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-strip"></div>
+
+  </div>
+
+  <!-- ══════════════════════════════════
+       PAGE 2 — DETAIL
+  ══════════════════════════════════ -->
+  <div class="page">
+
+    <header class="banner">
+      <span class="banner-address"><span class="addr">London, W1J 8AJ</span> <span class="addr">&nbsp;·&nbsp;</span> <span class="site">afterheelslondon.com</span></span>
+    </header>
+
+    <!-- Concept: text left / packaging image right -->
+    <div class="p2-concept">
+      <div class="p2-concept-left">
+        <p class="section-label">Our Concept</p>
+        <h2 class="section-heading">Comfort That Keeps the Celebration Going</h2>
+        <span class="gold-rule"></span>
+        <p class="section-body">After Heels London provides stylish, comfortable footwear for guests who want relief after wearing heels at weddings, parties, corporate events, clubs and luxury venues.</p>
+        <p class="section-body">Every pair arrives in a beautifully finished custom bag — generous enough to carry your heels home in. Custom branding available to match your venue or event identity.</p>
+      </div>
+      <div class="p2-concept-right">
+        <img src="packaging.jpg" alt="After Heels London packaging" />
+      </div>
+    </div>
+
+    <!-- Experience: crimson image left / quote right -->
+    <div class="p2-experience">
+      <div class="p2-exp-left">
+        <img src="Crimson.jpeg" alt="Crimson collection" />
+      </div>
+      <div class="p2-exp-right">
+        <p class="section-label">The Experience</p>
+        <h2 class="section-heading">More Than Footwear</h2>
+        <span class="gold-rule"></span>
+        <p class="section-body">A quiet, elegant solution — handed to your guests as though it was always part of the plan.</p>
+        <div class="pullquote">
+          "Comfortable guests stay longer, celebrate more, and remember the event far better."
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact footer -->
+    <div class="p2-footer">
+      <p class="footer-label">Get in Touch</p>
+      <div class="footer-details">
+        <span class="footer-emails">
+          <a href="mailto:enquiries@afterheelslondon.com">enquiries@afterheelslondon.com</a>
+          &nbsp;·&nbsp;
+          <a href="mailto:christina@afterheelslondon.com">christina@afterheelslondon.com</a>
+          &nbsp;·&nbsp;
+          <a href="mailto:richelle@afterheelslondon.com">richelle@afterheelslondon.com</a>
+        </span>
+        <span class="footer-website">
+          <a href="https://www.afterheelslondon.com">www.afterheelslondon.com</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="footer-strip"></div>
+
+  </div>
+
+</body>
+</html>
