@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>After Heels London — Sales Proposal — [Hotel Name]</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+  :root {
+    --burgundy:      #5C1220;
+    --burgundy-mid:  #7A1A2E;
+    --gold:          #C9A96E;
+    --gold-rule:     #D4A84B;
+    --ivory:         #F8F4EF;
+    --ivory-dark:    #F0EBE3;
+    --text:          #2C2420;
+    --text-mid:      #5C4A42;
+    --text-light:    #8C7B74;
+    --serif:         'Cormorant Garamond', Georgia, serif;
+    --sans:          'Montserrat', Arial, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #E8E4DE;
+    font-family: var(--serif);
+    color: var(--text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @media print {
+    @page { size: A4 portrait; margin: 0; }
+    body { background: white; margin: 0; padding: 0; }
+    .page {
+      box-shadow: none;
+      margin: 0 !important;
+      padding: 0;
+      width: 210mm;
+      page-break-after: always;
+      break-after: page;
+    }
+    .page:last-child { page-break-after: avoid; break-after: avoid; }
+    .cover-header, .parties, .ref-bar, .section, .page2-header { page-break-inside: avoid; break-inside: avoid; }
+    .page2 .section { padding: 2.5rem 3rem; }
+    .page2 .pricing-table td { font-size: 1.25rem; padding: 1.6rem 1rem 1.6rem 0; }
+    .page2 .pricing-table th { font-size: 0.65rem; padding-bottom: 1rem; }
+    .page2 .desc-small { font-size: 1.05rem; }
+    .page2 .total-label { font-size: 0.65rem; }
+    .page2 .total-value { font-size: 1.25rem; }
+    .page2 .total-row.grand .total-value { font-size: 1.6rem; }
+    .page2 .total-row { gap: 4rem; }
+    .page2 .pricing-totals { gap: 0.75rem; margin-top: 1.8rem; }
+    .page2 .volume-table td { font-size: 1.15rem; padding: 1rem 1.5rem 1rem 0; }
+    .page2 .volume-table th { font-size: 0.6rem; padding-bottom: 0.8rem; }
+    .page2 .included-note { font-size: 1.05rem; padding: 1.2rem 1.4rem; margin-top: 1.6rem; }
+    .page3 .section { padding: 1.6rem 3rem; }
+    .page3 .closing { padding: 1.2rem 3rem; }
+    .page3 .terms-grid { gap: 1.2rem 2rem; }
+    .page3 .feature-list { gap: 0.5rem; }
+    .page3 .feature-list li { font-size: 1rem; }
+    .page3 .term-body { font-size: 1rem; }
+    .page3 .section-label { font-size: 0.56rem; }
+    .page3 .intro-text { font-size: 1.05rem; }
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    width: 210mm;
+    margin: 2rem auto;
+    background: var(--ivory);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── COVER HEADER ── */
+  .cover-header {
+    background: linear-gradient(135deg, #5C1220 0%, #7A1A2E 60%, #5C1220 100%);
+    padding: 2.8rem 3rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cover-brand {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+  }
+
+  .cover-brand span { color: var(--gold); }
+
+  .cover-tagline {
+    font-family: var(--sans);
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.5rem;
+  }
+
+  .cover-doc-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 1.6rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── FROM / TO BLOCK ── */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    border-bottom: 1px solid rgba(212,168,75,0.25);
+  }
+
+  .party {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .party-divider {
+    background: rgba(212,168,75,0.3);
+    margin: 1.5rem 0;
+  }
+
+  .party-label {
+    font-family: var(--sans);
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-rule);
+    margin-bottom: 0.6rem;
+  }
+
+  .party-name {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--burgundy);
+    line-height: 1.2;
+  }
+
+  .party-role {
+    font-family: var(--sans);
+    font-size: 0.52rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .party-detail {
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
+
+  /* ── REF BAR ── */
+  .ref-bar {
+    background: var(--ivory-dark);
+    border-bottom: 1px solid rgba(212,168,75,0.2);
+    padding: 1.8rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ref-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ref-label {
+    font-family: var(--sans);
+    font-size: 0.48rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .ref-value {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 2.2rem 3rem;
+    border-bottom: 1px solid rgba(212,168,75,0.18);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 0.48rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-rule);
+    margin-bottom: 1rem;
+  }
+
+  .gold-rule {
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--gold-rule);
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── INTRO ── */
+  .intro-text {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 2;
+    max-width: 560px;
+  }
+
+  /* ── PRICING TABLE ── */
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+  }
+
+  .pricing-table thead tr {
+    border-bottom: 1px solid var(--gold-rule);
+  }
+
+  .pricing-table th {
+    font-family: var(--sans);
+    font-size: 0.48rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    padding: 0 1rem 0.7rem 0;
+    text-align: left;
+  }
+
+  .pricing-table th:last-child,
+  .pricing-table td:last-child { text-align: right; padding-right: 0; }
+
+  .pricing-table tbody tr {
+    border-bottom: 1px solid rgba(212,168,75,0.15);
+  }
+
+  .pricing-table tbody tr:last-child { border-bottom: none; }
+
+  .pricing-table td {
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--text);
+    padding: 0.9rem 1rem 0.9rem 0;
+    vertical-align: top;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.5;
+  }
+
+  .pricing-table td.desc-small {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  .pricing-totals {
+    margin-top: 1rem;
+    border-top: 1px solid var(--gold-rule);
+    padding-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+
+  .total-row {
+    display: flex;
+    gap: 3rem;
+    align-items: baseline;
+  }
+
+  .total-label {
+    font-family: var(--sans);
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .total-value {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    min-width: 90px;
+    text-align: right;
+  }
+
+  .total-row.grand .total-label { color: var(--burgundy); font-weight: 500; }
+  .total-row.grand .total-value { font-size: 1.25rem; color: var(--burgundy); }
+
+  /* ── VOLUME PRICING ── */
+  .volume-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+  }
+
+  .volume-table th {
+    font-family: var(--sans);
+    font-size: 0.45rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    padding: 0 1.5rem 0.6rem 0;
+    text-align: left;
+    border-bottom: 1px solid rgba(212,168,75,0.3);
+  }
+
+  .volume-table td {
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    padding: 0.6rem 1.5rem 0.6rem 0;
+    border-bottom: 1px solid rgba(212,168,75,0.1);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .volume-table tr.highlighted td {
+    color: var(--burgundy);
+    font-weight: 400;
+  }
+
+  /* ── INCLUDED / BRANDING LISTS ── */
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-top: 0.5rem;
+  }
+
+  .feature-list li {
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .feature-list li::before {
+    content: '✦';
+    font-size: 0.55rem;
+    color: var(--gold-rule);
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  /* ── TWO COLUMN ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* ── TERMS ── */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .term-item {}
+
+  .term-heading {
+    font-family: var(--sans);
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-rule);
+    margin-bottom: 0.4rem;
+  }
+
+  .term-body {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.75;
+  }
+
+  /* ── ACCEPTANCE ── */
+  .acceptance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .acceptance-field {
+    border-bottom: 1px solid rgba(92,18,32,0.2);
+    padding-bottom: 2rem;
+  }
+
+  .acceptance-label {
+    font-family: var(--sans);
+    font-size: 0.45rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    background: linear-gradient(135deg, #5C1220 0%, #7A1A2E 60%, #5C1220 100%);
+    padding: 2.2rem 3rem;
+    margin-top: auto;
+    text-align: center;
+  }
+
+  .closing-brand {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.06em;
+  }
+
+  .closing-brand span { color: var(--gold); }
+
+  .closing-message {
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    margin-top: 0.6rem;
+    line-height: 1.7;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .closing-contacts {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .closing-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .closing-contact-name {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  .closing-contact-detail {
+    font-family: var(--sans);
+    font-size: 0.48rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .closing-rule {
+    width: 40px;
+    height: 1px;
+    background: rgba(212,168,75,0.4);
+    margin: 1.4rem auto 0;
+  }
+
+  .closing-web {
+    font-family: var(--sans);
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.6rem;
+  }
+
+  /* ── PAGE 2 HEADER ── */
+  .page2-header {
+    background: linear-gradient(135deg, #5C1220 0%, #7A1A2E 60%, #5C1220 100%);
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page2-brand {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+
+  .page2-brand span { color: var(--gold); }
+
+  .page2-ref {
+    font-family: var(--sans);
+    font-size: 0.45rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ── WHAT'S INCLUDED HIGHLIGHT ── */
+  .included-note {
+    background: var(--ivory-dark);
+    border-left: 2px solid var(--gold-rule);
+    padding: 0.9rem 1.2rem;
+    margin-top: 1rem;
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     PAGE 1
+══════════════════════════════════ -->
+<div class="page">
+
+  <!-- Cover Header -->
+  <div class="cover-header">
+    <div class="cover-brand">After Heels <span>London</span></div>
+    <div class="cover-tagline">Elegant Comfort Footwear &nbsp;·&nbsp; Weddings &nbsp;·&nbsp; Events &nbsp;·&nbsp; Luxury Hospitality</div>
+    <div class="cover-doc-title">Sales Proposal &amp; Example Quotation</div>
+  </div>
+
+  <!-- From / To -->
+  <div class="parties">
+    <div class="party">
+      <div class="party-label">Prepared for</div>
+      <div class="party-name">Tom Smith</div>
+      <div class="party-role">[Job Title] · [Hotel Name]</div>
+      <div class="party-detail">
+        [Hotel Name]<br />
+        [Address Line 1]<br />
+        London, [Postcode]
+      </div>
+    </div>
+    <div class="party-divider"></div>
+    <div class="party">
+      <div class="party-label">Prepared by</div>
+      <div class="party-name">After Heels London</div>
+      <div class="party-role">Co-Founders</div>
+      <div class="party-detail">
+        Christina Jones<br />
+        christina@afterheelslondon.com<br />
+        07986 910 682<br />
+        <br />
+        Richelle Williams<br />
+        richelle@afterheelslondon.com<br />
+        07776 182 658<br />
+        <br />
+        Mayfair, London, W1J 8AJ<br />
+        www.afterheelslondon.com
+      </div>
+    </div>
+  </div>
+
+  <!-- Ref Bar -->
+  <div class="ref-bar">
+    <div class="ref-item">
+      <div class="ref-label">Quotation Ref</div>
+      <div class="ref-value">AHL-2026-[XXX]</div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-label">Date</div>
+      <div class="ref-value">[Date]</div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-label">Valid Until</div>
+      <div class="ref-value">[Date + 30 days]</div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-label">Prepared Following</div>
+      <div class="ref-value">Meeting with [Contact Name] &amp; the Events Team</div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="section">
+    <div class="section-label">Introduction</div>
+    <span class="gold-rule"></span>
+    <p class="intro-text">
+      Thank you for the opportunity to meet with [Contact Name] and your team. We very much enjoyed our conversation and were delighted to introduce After Heels London to [Hotel Name].<br /><br />
+      Following that meeting, we are pleased to present this proposal, outlining our product offering, pricing, and partnership terms tailored specifically for [Hotel Name].
+    </p>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE 2 — QUOTATION
+══════════════════════════════════ -->
+<div class="page page2">
+
+  <div class="page2-header">
+    <div class="page2-brand">After Heels <span>London</span></div>
+    <div class="page2-ref">AHL-2026-088 &nbsp;·&nbsp; [Hotel Name]</div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section">
+    <div class="section-label">Example Quotation</div>
+    <span class="gold-rule"></span>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th style="width:50%">Product &amp; Description</th>
+          <th style="width:17%;text-align:right;padding-right:1rem">Unit Price</th>
+          <th style="width:10%;text-align:right;padding-right:1rem">Qty</th>
+          <th style="width:13%">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong style="font-weight:400;color:var(--text)">After Heels London — Premium Comfort Footwear</strong><br />
+            <span class="desc-small">Luxury comfort footwear, individually packaged in a beautifully finished custom bag. Available in mixed sizes across the Soft &amp; Classic collections.</span>
+          </td>
+          <td style="text-align:right;padding-right:1rem">£30.00</td>
+          <td style="text-align:right;padding-right:1rem">100</td>
+          <td>£3,000.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pricing-totals">
+      <div class="total-row">
+        <span class="total-label">Subtotal</span>
+        <span class="total-value">£3,000.00</span>
+      </div>
+      <div class="total-row">
+        <span class="total-label">VAT (20%)</span>
+        <span class="total-value">£600.00</span>
+      </div>
+      <div class="total-row">
+        <span class="total-label">Delivery</span>
+        <span class="total-value">Included</span>
+      </div>
+      <div class="total-row grand">
+        <span class="total-label">Total</span>
+        <span class="total-value">£3,600.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Volume pricing -->
+  <div class="section">
+    <div class="section-label">Volume Pricing</div>
+    <span class="gold-rule"></span>
+    <table class="volume-table">
+      <thead>
+        <tr>
+          <th>Quantity</th>
+          <th>Price per Pair (excl. VAT)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlighted"><td>50 – 100 pairs &nbsp;<em style="font-size:0.78rem;color:#8C7B74;">— this quotation</em></td><td>£30.00</td></tr>
+        <tr><td>101 – 250 pairs</td><td>£28.00</td></tr>
+        <tr><td>251 – 500 pairs</td><td>£25.00</td></tr>
+        <tr><td>501+ pairs</td><td>Contact us to discuss</td></tr>
+      </tbody>
+    </table>
+    <div class="included-note">
+      All prices are per pair, exclusive of VAT at 20%. Delivery included to [Hotel Name], Knightsbridge. For orders over 500 pairs, please contact us directly for a bespoke quotation.
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE 3 — DETAILS & ACCEPTANCE
+══════════════════════════════════ -->
+<div class="page page3">
+
+  <div class="page2-header">
+    <div class="page2-brand">After Heels <span>London</span></div>
+    <div class="page2-ref">AHL-2026-088 &nbsp;·&nbsp; [Hotel Name]</div>
+  </div>
+
+  <!-- What's Included + Optional Branding -->
+  <div class="section">
+    <div class="two-col">
+      <div>
+        <div class="section-label">What's Included</div>
+        <span class="gold-rule"></span>
+        <ul class="feature-list">
+          <li>Premium quality comfort footwear</li>
+          <li>Individually presented in a finished custom bag</li>
+          <li>Available in mixed sizes</li>
+          <li>Suitable for the most discerning luxury events</li>
+          <li>Delivery to your venue included</li>
+          <li>Dedicated account support</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-label">Optional Branding</div>
+        <span class="gold-rule"></span>
+        <ul class="feature-list">
+          <li>Custom branded packaging</li>
+          <li>[Hotel] logo on packaging</li>
+          <li>Exclusive colourway options</li>
+          <li>Wedding &amp; corporate event branding</li>
+        </ul>
+        <p style="font-family:var(--serif);font-size:0.82rem;font-style:italic;color:var(--text-light);margin-top:0.9rem;line-height:1.6;">
+          Branding options are available for qualifying order volumes. Pricing on request.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms -->
+  <div class="section">
+    <div class="section-label">Terms</div>
+    <span class="gold-rule"></span>
+    <div class="terms-grid">
+      <div class="term-item">
+        <div class="term-heading">Lead Time</div>
+        <div class="term-body">15–30 working days from order confirmation, subject to availability. Express production may be available upon request.</div>
+      </div>
+      <div class="term-item">
+        <div class="term-heading">Payment</div>
+        <div class="term-body">50% deposit upon confirmation of order. Remaining balance due prior to delivery.</div>
+      </div>
+      <div class="term-item">
+        <div class="term-heading">Delivery</div>
+        <div class="term-body">Included within Central London. Please advise your preferred delivery contact and access requirements at [Hotel Name].</div>
+      </div>
+      <div class="term-item">
+        <div class="term-heading">Validity</div>
+        <div class="term-body">This example quotation is valid until 06 September 2026. Pricing is subject to change thereafter.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acceptance -->
+  <div class="section">
+    <div class="section-label">Acceptance</div>
+    <span class="gold-rule"></span>
+    <p style="font-family:var(--serif);font-size:0.9rem;font-weight:300;color:var(--text-mid);line-height:1.75;">
+      To proceed based on this example quotation, please confirm your requirements by email and we will issue a formal quotation and deposit invoice to progress your order.
+    </p>
+    <div class="acceptance-grid">
+      <div class="acceptance-field">
+        <span class="acceptance-label">Authorised Name</span>
+      </div>
+      <div class="acceptance-field">
+        <span class="acceptance-label">Signature</span>
+      </div>
+      <div class="acceptance-field">
+        <span class="acceptance-label">Date</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="closing">
+    <div class="closing-brand">After Heels <span>London</span></div>
+    <div class="closing-message">
+      Thank you for considering After Heels London. We look forward to partnering with [Hotel Name] to provide guests with an elegant comfort solution that is as considered as your events themselves.
+    </div>
+    <div class="closing-contacts">
+      <div class="closing-contact">
+        <div class="closing-contact-name">Christina Jones</div>
+        <div class="closing-contact-detail">christina@afterheelslondon.com</div>
+        <div class="closing-contact-detail">07986 910 682</div>
+      </div>
+      <div class="closing-contact">
+        <div class="closing-contact-name">Richelle Williams</div>
+        <div class="closing-contact-detail">richelle@afterheelslondon.com</div>
+        <div class="closing-contact-detail">07776 182 658</div>
+      </div>
+    </div>
+    <div class="closing-rule"></div>
+    <div class="closing-web">www.afterheelslondon.com &nbsp;·&nbsp; Mayfair, London W1J 8AJ</div>
+  </div>
+
+</div>
+
+</body>
+</html>
