@@ -533,6 +533,73 @@ h1, h2, h3 {
   margin-top: 0.5rem;
 }
 
+/* Style cards — Soft & Classic collections */
+.collection-styles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(201,169,110,0.15);
+  margin: 2.5rem 0 0;
+}
+
+.collection-style-card {
+  background: var(--ivory-tint);
+  padding: 2.5rem 3rem;
+}
+
+.style-label {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.style-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--burgundy);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.style-finish {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-mid);
+  margin-bottom: 0.25rem;
+}
+
+.style-desc {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.style-colours {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.style-colours span {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(107,26,42,0.2);
+  color: var(--text-mid);
+}
+
 .collection-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
